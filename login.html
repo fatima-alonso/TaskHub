@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Inicio de sesión | TaskHub</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="login.js"></script>
 </head>
 
 <body>
@@ -24,15 +25,15 @@
 
             </div>
 
-            <form class="form" action="#" method="post">
+            <form class="form" action="#" method="post" onsubmit="login(event)">
                 <label class="field">
                     <span>Correo</span>
-                    <input type="email" placeholder="nombre@compañia.com" required />
+                    <input id="email" type="email" placeholder="nombre@compañia.com" required />
                 </label>
 
                 <label class="field">
                     <span>Contraseña</span>
-                    <input type="password" placeholder="••••••••" required />
+                    <input id="password" type="password" placeholder="••••••••" required />
                 </label>
 
 
