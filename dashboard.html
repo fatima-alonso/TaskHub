@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHub - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    <h1>Dashboard</h1>
+<body>
+    <div id="header"></div>
+
+    <main class="dashboard">
+        <div class="container">
+            <h2>Dashboard</h2>
+            <p>Aquí podrás ver un resumen de tus proyectos, tareas pendientes y actividad reciente.</p>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Proyectos Activos</h3>
+                    <p>3</p>
+                </div>
+
+                <div class="card">
+                    <h3>Tareas Pendientes</h3>
+                    <p>12</p>
+                </div>
+
+                <div class="card">
+                    <h3>Actividad Reciente</h3>
+                    <ul>
+                        <li>Juan ha completado la tarea "Diseñar logo"</li>
+                        <li>Ana ha creado el proyecto "Lanzamiento de Producto"</li>
+                        <li>Carlos ha comentado en la tarea "Redactar contenido"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="layout.js"></script>
 </body>
 
 </html>
