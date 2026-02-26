@@ -1,5 +1,5 @@
 const users = [
-    { email: "fatima@taskhub.com", password: "1234" }
+    { email: "fatima@taskhub.com", password: "1234", name: "Fátima" }
 ];
 
 function login(event) {
@@ -10,6 +10,7 @@ function login(event) {
     const user = users.find(u => u.email === email && u.password === password);
 
     if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
         window.location = "dashboard.html";
     } else {
         alert("Credenciales incorrectas");
