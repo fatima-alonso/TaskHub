@@ -1,29 +1,42 @@
-fetch("header.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
+const user = JSON.parse(localStorage.getItem("currentUser"));
 
-    const user = JSON.parse(localStorage.getItem("currentUser"));
-    if (user) {
+
+if (user) {
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
       const headerContainer = document.getElementById("header");
-      const navInner = headerContainer.querySelector(".nav-inner");
 
-      const actions = document.createElement("div");
-      actions.className = "nav-actions";
-      actions.innerHTML = `
-        <span>Hola, ${user.name}</span>
-        <button id="logoutBtn" class="btn btn-ghost">Salir</button>
-      `;
+      if (headerContainer) {
+        headerContainer.innerHTML = data;
 
-      navInner.appendChild(actions);
+        const navInner = headerContainer.querySelector(".nav-inner");
 
-      actions.querySelector("#logoutBtn").addEventListener("click", () => {
-        localStorage.removeItem("currentUser");
-        window.location = "home.html";
-      });
-    }
-  });
+       
 
+        const actions = document.createElement("div");
+        actions.className = "nav-actions";
+        actions.innerHTML = `
+          <span>Hola, ${user.name}</span>
+          <button id="logoutBtn" class=" btn-outline-purple">Salir</button>
+        `;
+
+        navInner.appendChild(actions);
+
+        actions.querySelector("#logoutBtn").addEventListener("click", () => {
+          localStorage.removeItem("currentUser");
+          window.location = "login.html";
+        });
+      }
+    });
+}
+
+/* Footer puede mostrarse siempre */
 fetch("footer.html")
   .then(res => res.text())
-  .then(data => document.getElementById("footer").innerHTML = data);
+  .then(data => {
+    const footerContainer = document.getElementById("footer");
+    if (footerContainer) {
+      footerContainer.innerHTML = data;
+    }
+  });

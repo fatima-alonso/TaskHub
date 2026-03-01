@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHub - Pokeapi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <script src="auth.js"></script>
+
+    <div id="header"></div>
+
+    <main class="dashboard">
+        <div class="container">
+            <h2>Pokeapi</h2>
+            <p>¡Bienvenido a la sección de Pokeapi! Aquí podrás descubrir información sobre tus Pokémon favoritos.</p>
+
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Pokémon del Día</h3>
+                    <p>¡Descubre un Pokémon aleatorio cada vez que visites esta página!</p>
+                    <div id="pokemon-card">
+                        <h4 id="pokemon-name"></h4>
+                        <img id="pokemon-img" />
+                    </div>
+                </div>
+            </div>
+    </main>
+    <div id="footer"></div>
+    <script src="layout.js"></script>
+
+    <script>
+        async function loadPokemon() {
+            try {
+                const randomId = Math.floor(Math.random() * 151) + 1;
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+                const data = await response.json();
+
+                const name = data.name;
+                const image = data.sprites.front_default;
+
+                document.getElementById("pokemon-name").textContent =
+                    name.charAt(0).toUpperCase() + name.slice(1);
+
+                document.getElementById("pokemon-img").src = image;
+
+            } catch (error) {
+                console.error("Error loading Pokémon:", error);
+            }
+        }
+
+        loadPokemon();
+    </script>
+
+</body>
+
+</html>

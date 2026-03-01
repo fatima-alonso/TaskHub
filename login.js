@@ -1,5 +1,7 @@
 const users = [
-    { email: "fatima@taskhub.com", password: "1234", name: "Fátima" }
+    { email: "fatima@taskhub.com", password: "1234", name: "Fátima"} 
+    
+    
 ];
 
 function login(event) {
