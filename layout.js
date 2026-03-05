@@ -13,7 +13,6 @@ if (user) {
         const navInner = headerContainer.querySelector(".nav-inner");
 
        
-
         const actions = document.createElement("div");
         actions.className = "nav-actions";
         actions.innerHTML = `
