@@ -20,6 +20,9 @@ body {
     background-color: var(--gray-light);
     color: var(--dark);
     min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -103,11 +106,11 @@ button,
 
 
 main {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
-    flex: 1;
 }
 
 footer {
