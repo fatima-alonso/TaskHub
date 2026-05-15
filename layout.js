@@ -24,7 +24,7 @@ if (user) {
 
         actions.querySelector("#logoutBtn").addEventListener("click", () => {
           localStorage.removeItem("currentUser");
-          window.location = "login.html";
+          window.location = "index.html";
         });
       }
     });
