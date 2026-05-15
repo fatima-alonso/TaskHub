@@ -23,6 +23,11 @@ async function iniciarBatalla() {
     const input2 = document.getElementById('poke2-input').value;
     if (!input1 || !input2) return alert("Selecciona dos Pokémon");
 
+     if (input1 === input2) {
+        alert("No puedes elegir el mismo Pokémon");
+        return;
+    }
+
     try {
         // Lógica del contador
         juegosJugados++;
